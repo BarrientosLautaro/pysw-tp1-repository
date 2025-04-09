@@ -1,0 +1,197 @@
+/* =======================
+   RESPONSIVE.CSS GLOBAL
+   ======================= */
+
+/* Mobile First: diseño base pensado para móviles
+   Lo que no esté aquí, se hereda desde los estilos generales
+*/
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* ======================
+   Ajustes para pantallas muy pequeñas
+========================= */
+@media (max-width: 480px) {
+  .hero-title {
+    font-size: 2rem;
+  }
+
+  .section-title {
+    font-size: 1.5rem;
+  }
+
+  .btn {
+    padding: 0.5rem 1rem;
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 350px) {
+  .nav-link {
+    font-size: 0.75rem;
+  }
+
+  .nav-list {
+    gap: 1rem;
+  }
+}
+
+/* ======================
+   Tablet y dispositivos medianos
+========================= */
+@media (min-width: 600px) {
+  .container {
+    padding: 0 2rem;
+  }
+
+  .header-container,
+  .footer-container {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .nav-toggle-label {
+    display: none; /* Ocultamos hamburguesa en tablet hacia arriba */
+  }
+
+  .main-nav {
+    position: static;
+    flex-direction: row;
+    max-height: none !important;
+    overflow: visible;
+    background: none;
+  }
+
+  .nav-list {
+    flex-direction: row;
+    gap: 2rem;
+  }
+
+  .submenu {
+    position: absolute;
+  }
+
+  .section {
+    padding: 3rem 2rem;
+  }
+}
+
+/* ======================
+   Escritorio estándar
+========================= */
+@media (min-width: 900px) {
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+  }
+
+  .grid-2,
+  .grid-3,
+  .grid-4 {
+    display: grid;
+    gap: 2rem;
+  }
+
+  .grid-2 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .grid-3 {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .grid-4 {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  .newsletter-form {
+    flex-direction: row;
+    gap: 1rem;
+  }
+
+  .newsletter-form input {
+    flex: 1;
+  }
+
+  .section {
+    padding: 4rem 2rem;
+  }
+}
+
+/* ======================
+   Pantallas grandes (4K o proyectores)
+========================= */
+@media (min-width: 1400px) {
+  html {
+    font-size: 18px;
+  }
+
+  .hero-title {
+    font-size: 4rem;
+  }
+
+  .section-title {
+    font-size: 2.5rem;
+  }
+}
+
+/* ======================
+   Ajustes específicos (modales, overlays, etc.)
+========================= */
+@media (max-height: 500px) {
+  .modal {
+    max-height: 80vh;
+    overflow-y: auto;
+  }
+}
+
+/* ======================
+   Utilidades
+========================= */
+.text-center {
+  text-align: center;
+}
+
+.flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.hide-mobile {
+  display: none;
+}
+
+@media (min-width: 768px) {
+  .hide-mobile {
+    display: block;
+  }
+
+  .hide-desktop {
+    display: none;
+  }
+}
+
+/* ======================
+   Scroll reveal (opcional si usás JS para activarlo)
+========================= */
+.reveal {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: none;
+}

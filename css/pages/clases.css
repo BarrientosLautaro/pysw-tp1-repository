@@ -1,0 +1,218 @@
+/* ========================
+   ESTILOS EXCLUSIVOS DE CLASES.HTML
+   ======================== */
+
+   .clases-main {
+    padding: var(--espacio-md) var(--espacio-sm);
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  .clases-hero {
+    text-align: center;
+    margin-bottom: var(--espacio-lg);
+  }
+  
+  .clases-subtitle {
+    font-size: 1.2rem;
+    color: var(--color-secondary);
+  }
+  
+  /* Sección de filtros */
+  .filtros {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: var(--espacio-sm);
+    margin-bottom: var(--espacio-md);
+  }
+  
+  .filtro-btn {
+    padding: 0.6rem 1.5rem;
+    border: 2px solid var(--color-primary);
+    background-color: transparent;
+    color: var(--color-primary);
+    font-weight: var(--peso-negrita);
+    border-radius: 999px;
+    cursor: pointer;
+    transition: var(--transicion-base);
+    position: relative;
+  }
+  
+  .filtro-btn:hover,
+  .filtro-btn.active,
+  input[type="radio"]:checked + .filtro-btn {
+    background-color: var(--color-primary);
+    color: var(--color-bg);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    transform: scale(1.05);
+  }
+  
+  .filtro-btn:focus-visible {
+    outline: 2px dashed var(--color-focus);
+    outline-offset: 4px;
+  }
+  
+  /* Grid de tarjetas */
+  .clases-grid {
+    display: grid;
+   /* gap: var(--espacio-md);*/
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-gap: 1rem;
+    padding: 1rem;
+    grid-auto-rows: min-content; /* Añade esta línea */
+    align-items: flex-start;
+  }
+  
+  /* Tarjetas de clases */
+  .clase-card {
+    display: none; /* Se muestra según el filtro */
+    background-color: var(--color-surface);
+    color: var(--color-text);
+    border-radius: var(--borde-radio);
+    overflow: hidden;
+    box-shadow: var(--sombra-suave);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .clase-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--sombra-profunda);
+  }
+  
+  .clase-card img {
+    width: 100%;
+     /*height: 200px;*/
+    object-fit: cover;
+  }
+  
+  .clase-info {
+    padding: var(--espacio-sm);
+  }
+  
+  .clase-info h2 {
+    margin-bottom: 0.5rem;
+    font-size: 1.5rem;
+  }
+  
+  .clase-info p {
+    font-size: 1rem;
+    line-height: var(--line-height);
+  }
+  
+  /* Filtros de visibilidad */
+  #filtro-todos:checked ~ .clases-grid .clase-card {
+    display: block;
+  }
+  
+  #filtro-musculacion:checked ~ .clases-grid .clase-musculacion,
+  #filtro-crossfit:checked ~ .clases-grid .clase-crossfit,
+  #filtro-yoga:checked ~ .clases-grid .clase-yoga,
+  #filtro-spinning:checked ~ .clases-grid .clase-spinning {
+    display: block;
+  }
+  
+/* ===== HORARIOS ===== */
+.horarios {
+  padding: 5rem 2rem;
+  background-color: var(--color-primario); /* negro */
+  color: var(--color-texto); /* blanco */
+  text-align: center;
+}
+
+.horarios h2 {
+  font-size: 2.8rem;
+  margin-bottom: 3rem;
+  color: var(--color-acento); /* amarillo */
+  text-transform: uppercase;
+  font-family: 'Montserrat', sans-serif;
+}
+
+/* Tabla */
+.tabla-horarios {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 1px;
+  background-color: #2222229d;
+  color: var(--color-dia);
+  font-weight: bold;
+  padding: 0.6rem;
+  border-radius: 10px;
+  text-align: center;
+  overflow-x: auto;
+  font-size: 0.95rem;
+}
+
+.tabla-horarios__header,
+.tabla-horarios__fila {
+  display: contents;
+}
+
+.tabla-horarios__header > div,
+.tabla-horarios__fila > div {
+  background-color: var(--color-primario); /* fondo negro */
+  color: var(--color-texto); /* blanco */
+  padding: 1rem;
+  border: 1px solid var(--color-acento);
+  font-weight: bold;
+}
+
+.tabla-horarios__fila > div:first-child {
+  background-color: var(--color-acento); /* amarillo para el nombre del día */
+  color: #000;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .tabla-horarios {
+    display: block;
+  }
+
+  .tabla-horarios__header {
+    display: none; /* Ocultar el encabezado en vista móvil */
+  }
+
+  .tabla-horarios__fila {
+    margin-bottom: 2rem;
+    border: 1px solid var(--color-acento);
+  }
+
+  .tabla-horarios__fila > div {
+    display: flex;
+    justify-content: space-between;
+    padding: 0.8rem 1rem;
+    border-bottom: 1px solid var(--color-acento);
+  }
+
+  .tabla-horarios__fila > div:first-child {
+    background-color: var(--color-acento);
+    color: #000;
+    font-weight: bold;
+    text-transform: uppercase;
+    width: 100%;
+    margin-bottom: 0.5rem;
+  }
+
+  .tabla-horarios__fila > div:not(:first-child):before {
+    content: attr(data-header);
+    font-weight: bold;
+    margin-right: 0.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .tabla-horarios {
+    font-size: 0.85rem;
+  }
+
+  .tabla-horarios__fila > div {
+    padding: 0.6rem 0.8rem;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .tabla-horarios__fila > div:not(:first-child):before {
+    margin-bottom: 0.2rem;
+  }
+}
+

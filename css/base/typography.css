@@ -1,0 +1,94 @@
+/* 1. Jerarquía tipográfica general */
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 700;
+  line-height: 1.2;
+  color: var(--color-titulos);
+}
+
+h1 {
+  font-size: 2.5rem;
+  letter-spacing: -0.03em;
+}
+
+h2 {
+  font-size: 2rem;
+}
+
+h3 {
+  font-size: 1.5rem;
+}
+
+h4 {
+  font-size: 1.25rem;
+}
+
+h5 {
+  font-size: 1rem;
+}
+
+h6 {
+  font-size: 0.875rem;
+}
+
+/* 2. Párrafos */
+p {
+  font-size: 1rem;
+  line-height: var(--line-height);
+  margin-bottom: 1rem;
+  color: var(--color-texto);
+}
+
+/* 3. Enlaces */
+a {
+  color: var(--color-acento);
+  transition: color 0.3s ease;
+}
+
+a:hover,
+a:focus {
+  color: var(--color-acento-hover);
+  text-decoration: underline;
+}
+
+/* 4. Negrita, cursiva, subrayado */
+strong {
+  font-weight: 700;
+}
+
+em {
+  font-style: italic;
+}
+
+u {
+  text-decoration: underline;
+}
+
+/* 5. Citas y bloques destacados */
+blockquote {
+  font-style: italic;
+  border-left: 4px solid var(--color-acento);
+  padding-left: 1rem;
+  margin: 1rem 0;
+  color: var(--color-texto-suave);
+}
+
+code {
+  font-family: 'Courier New', Courier, monospace;
+  background-color: #1a1a1a;
+  padding: 0.2rem 0.4rem;
+  border-radius: 4px;
+  color: var(--color-acento);
+  font-size: 0.95rem;
+}
+
+/* 6. Titulares decorados */
+h2::after {
+  content: "";
+  display: block;
+  width: 60px;
+  height: 4px;
+  margin-top: 0.5rem;
+  background-color: var(--color-acento);
+  border-radius: 2px;
+}
+

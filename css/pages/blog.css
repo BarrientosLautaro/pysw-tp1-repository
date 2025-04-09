@@ -1,0 +1,152 @@
+/* === ESTILO GENERAL === */
+.blog {
+  padding: 2rem;
+  background-color: var(--color-fondo);
+  color: var(--color-texto);
+}
+
+.blog h2 {
+  text-align: center;
+  margin-bottom: 2rem;
+  font-size: 2.5rem;
+  color: var(--color-texto);
+}
+
+/* === FILTROS CON RADIO BUTTONS === */
+.filtros {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+/* Ocultar los radios */
+.filtros input[type="radio"] {
+  display: none;
+}
+
+/* Estilo de botones */
+.filtros label {
+  padding: 0.5rem 1rem;
+  background: var(--color-etiqueta);
+  border-radius: 20px;
+  cursor: pointer;
+  transition: 0.3s ease;
+  font-weight: bold;
+  color: var(--color-texto);
+}
+
+.filtros input[type="radio"]:checked + label {
+  background: #000;
+  color: #fff;
+}
+
+/* === GRID ESTILO NEWSPAPER === */
+.grid-blog {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+  width: 100%;
+}
+
+/* === POSTS === */
+.post {
+  background: var(--color-post);
+  padding: 1.5rem;
+  border-radius: 1rem;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+  display: none;
+}
+
+.post.reveal {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.post h3 {
+  margin-top: 0;
+  color: var(--color-texto);
+}
+
+.meta {
+  font-size: 0.9rem;
+  color: var(--color-meta);
+  margin-bottom: 0.5rem;
+}
+
+.tag {
+  background-color: #ffcd00;
+  color: #000;
+  padding: 0 0.5rem;
+  border-radius: 5px;
+  font-weight: bold;
+}
+
+/* === COMENTARIOS Y AVATARES === */
+.comentarios {
+  margin-top: 1rem;
+  border-top: 1px solid var(--color-borde);
+  padding-top: 1rem;
+}
+
+.comentario {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.avatar {
+  width: 40px;
+  height: 40px;
+  background-color: #000;
+  border-radius: 50%;
+  position: relative;
+}
+
+.avatar::before {
+  content: "";
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  width: 20px;
+  height: 10px;
+  background-color: #fff;
+  border-radius: 50%;
+}
+
+.avatar::after {
+  content: "";
+  position: absolute;
+  bottom: 5px;
+  left: 10px;
+  width: 20px;
+  height: 5px;
+  background-color: #fff;
+  border-radius: 50%;
+}
+
+/* === FILTRO CSS-ONLY === */
+#todos:checked ~ .grid-blog .post {
+  display: block;
+}
+
+#entrenamiento:checked ~ .grid-blog .entrenamiento,
+#nutricion:checked ~ .grid-blog .nutricion,
+#bienestar:checked ~ .grid-blog .bienestar {
+  display: block;
+}
+
+/* === RESPONSIVE === */
+@media (max-width: 600px) {
+  .filtros {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+}
+
+  
+  

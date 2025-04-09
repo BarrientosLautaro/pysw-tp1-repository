@@ -1,0 +1,195 @@
+/* ===== SECCIÓN DE PRECIOS ===== */
+.precios {
+  padding: 5rem 2rem;
+  background-color: var(--color-primario); /* negro */
+  color: var(--color-texto); /* blanco */
+  text-align: center;
+}
+
+.precios h2 {
+  font-size: 2.8rem;
+  margin-bottom: 3rem;
+  color: var(--color-acento); /* amarillo */
+  text-transform: uppercase;
+  font-family: 'Montserrat', sans-serif;
+}
+
+/* ===== TOGGLE MENSUAL / ANUAL ===== */
+.toggle-plan {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 3rem;
+  font-size: 1.2rem;
+  color: var(--color-texto);
+}
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 32px;
+  cursor: pointer;
+}
+
+.slider {
+  position: absolute;
+  top: 0; left: 0;
+  right: 0; bottom: 0;
+  background-color: #44444466; /* más oscuro para fondo */
+  border-radius: 30px;
+  transition: background-color 0.4s;
+}
+
+.slider::before {
+  content: "";
+  position: absolute;
+  height: 24px;
+  width: 24px;
+  left: 4px;
+  bottom: 4px;
+  background-color: #FFD700; 
+  border-radius: 50%;
+  transition: transform 0.4s;
+}
+
+/* ===== TABLA DE PLANES ===== */
+.tabla-precios {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* PLAN */
+.plan {
+  background-color: #a09f9f; /* fondo oscuro */
+  color: var(--color-texto); /* blanco */
+  padding: 2rem;
+  border-radius: 15px;
+  box-shadow: 0 4px 12px rgb(31, 31, 31); /* sombra suave clara */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  position: relative;
+}
+
+.plan:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 10px 30px rgba(255, 255, 0, 0.941);
+}
+
+.plan h3 {
+  font-size: 1.6rem;
+  margin-bottom: 1rem;
+  color: var(--color-acento); /* amarillo */
+}
+
+.precio {
+  font-size: 1.8rem;
+  margin-bottom: 1.2rem;
+  color: var(--color-acento);
+}
+
+/* Toggle precios desde el checkbox oculto */
+#toggle-precio ~ .precios .precio-anual {
+  display: none;
+}
+
+#toggle-precio ~ .precios .precio-mensual {
+  display: block;
+}
+
+#toggle-precio:checked ~ .precios .precio-anual {
+  display: block;
+}
+
+#toggle-precio:checked ~ .precios .precio-mensual {
+  display: none;
+}
+
+/* Lista de beneficios */
+.plan ul {
+  list-style: none;
+  padding: 0;
+  margin-bottom: 1.5rem;
+  font-size: 0.95rem;
+}
+
+.plan ul li {
+  margin: 0.5rem 0;
+  position: relative;
+  padding-left: 1.5rem;
+  cursor: help;
+}
+
+.plan ul li::before {
+  content: "✔";
+  color: var(--color-acento);
+  position: absolute;
+  left: 0;
+  font-size: 1rem;
+}
+
+/* Tooltips */
+.plan ul li:hover::after {
+  content: attr(data-tooltip);
+  position: absolute;
+  left: 0;
+  top: 100%;
+  background-color: var(--color-texto); /* blanco */
+  color: var(--color-primario); /* negro */
+  padding: 0.4rem 0.8rem;
+  font-size: 0.8rem;
+  border-radius: 6px;
+  white-space: nowrap;
+  margin-top: 0.4rem;
+  z-index: 10;
+}
+
+/* Botón */
+.plan .btn {
+  background: var(--color-acento); /* amarillo */
+  color: #000000;
+  padding: 0.7rem 1.5rem;
+  border: none;
+  border-radius: 30px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background 0.3s ease;
+}
+
+.plan .btn:hover {
+  background: #ffd700;
+}
+
+/* Plan destacado */
+.plan.destacado {
+  border: 2px solid var(--color-acento);
+  transform: scale(1.05);
+  box-shadow: 0 10px 40px rgb(255, 225, 0);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .toggle-plan {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+}
+
+/* Movimiento del círculo del switch */
+#toggle-precio:checked ~ .precios .slider::before {
+  transform: translateX(28px);
+  background-color: #FFD700;
+}
+
+/* Cambio de color del fondo del switch */
+#toggle-precio:checked ~ .precios .slider {
+  background-color: var(--color-acento);
+}
+
+
+
+  
+  

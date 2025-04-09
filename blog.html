@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" >
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" >
+    <title>Towards Glory | Gimnasio</title>
+    <!-- Base -->
+    <link rel="stylesheet" href="./css/base/reset.css" >
+    <link rel="stylesheet" href="./css/base/typography.css" >
+    <link rel="stylesheet" href="./css/base/theme.css" >
+    <link rel="stylesheet" href="./css/layout/header.css" >
+    <link rel="stylesheet" href="./css/layout/footer.css" >
+    <link rel="stylesheet" href="./css/base/responsive.css" >
+    <!-- Página actual -->
+    <link rel="stylesheet" href="./css/pages/blog.css" >
+    <!-- Utilidades -->
+    <link rel="stylesheet" href="./css/components/buttons.css" >
+    <!-- Favicon -->
+    <link rel="icon" href="./images/logo.jpg" type="image/jpg">
+  </head>
+
+<body>
+    
+
+  <!-- Header -->
+  <header class="header">
+    <div class="container header-container">
+
+      <button id="modo-toggle" aria-label="Cambiar modo oscuro" class="modo-toggle">
+        🌙
+      </button>          
+
+        <a href="index.html" class="logo" aria-label="Inicio">
+          <span class="logo-text">TOWARDS GLORY</span>
+        </a>
+        <!-- Toggle Menu (Hamburguesa) -->
+        <input type="checkbox" id="nav-toggle" class="nav-toggle" >
+        <label for="nav-toggle" class="nav-toggle-label">
+          <span class="hamburger-line"></span>
+        </label>
+
+        <nav class="main-nav" aria-label="Menú principal">
+          <ul class="nav-list">
+            <li class="nav-item"><a href="index.html" class="nav-link">Inicio</a></li>
+            <li class="nav-item has-submenu">
+              <a href="#" class="nav-link">Clases</a>
+              <ul class="submenu">
+                <li><a href="./clases.html#musculacion" class="submenu-link">Musculación</a></li>
+                <li><a href="./clases.html#crossfit" class="submenu-link">CrossFit</a></li>
+                <li><a href="./clases.html#yoga" class="submenu-link">Yoga</a></li>
+                <li><a href="./clases.html#spinning" class="submenu-link">Spinning</a></li>
+              </ul>
+            </li>
+            <li class="nav-item"><a href="./entrenadores.html" class="nav-link">Entrenadores</a></li>
+            <li class="nav-item"><a href="./precios.html" class="nav-link">Precios</a></li>
+            <li class="nav-item"><a href="./blog.html" class="nav-link">Blog</a></li>
+            <li class="nav-item"><a href="./contacto.html" class="nav-link">Contacto</a></li>
+          </ul>
+        </nav>
+      </div>
+
+  </header>
+
+  <section class="blog">
+    <h2>Blog de Fitness</h2>
+  
+    <!-- Filtros por categoría -->
+    <div class="filtros">
+        <input type="radio" name="filtro" id="todos" checked>
+        <label for="todos">Todos</label>
+    
+        <input type="radio" name="filtro" id="entrenamiento">
+        <label for="entrenamiento">Entrenamiento</label>
+    
+        <input type="radio" name="filtro" id="nutricion">
+        <label for="nutricion">Nutrición</label>
+    
+        <input type="radio" name="filtro" id="bienestar">
+        <label for="bienestar">Bienestar</label>
+    
+        <!-- Este bloque debe estar acá, justo después de los radios -->
+        <div class="grid-blog">
+        <!-- ... tus artículos ... -->
+
+            <!-- Post 1 -->
+            <article class="post entrenamiento">
+                <h3>Rutina Full Body para Principiantes</h3>
+                <p class="meta">Publicado el 6 de abril, 2025 · <span class="tag">Entrenamiento</span></p>
+                <p>Conocé una rutina efectiva para iniciar en el gimnasio sin lesionarte ni frustrarte.</p>
+                <a href="#" class="leer-mas">Leer más</a>
+        
+                <!-- Comentarios -->
+                <div class="comentarios">
+                <h4>Comentarios</h4>
+                <div class="comentario">
+                    <div class="avatar"></div>
+                    <div class="contenido">
+                    <strong>Martina:</strong>
+                    <p>¡Excelente rutina! Me ayudó mucho para empezar.</p>
+                    </div>
+                </div>
+                </div>
+            </article>
+        
+            <!-- Post 2 -->
+            <article class="post nutricion">
+                <h3>Alimentos clave para ganar masa muscular</h3>
+                <p class="meta">Publicado el 5 de abril, 2025 · <span class="tag">Nutrición</span></p>
+                <p>Descubrí los alimentos que no pueden faltar en tu dieta si querés aumentar masa muscular.</p>
+                <a href="#" class="leer-mas">Leer más</a>
+            </article>
+        
+            <!-- Post 3 -->
+            <article class="post bienestar">
+                <h3>Importancia del descanso en tu progreso</h3>
+                <p class="meta">Publicado el 4 de abril, 2025 · <span class="tag">Bienestar</span></p>
+                <p>El descanso también entrena. Cómo mejorar tus resultados cuidando tus horas de sueño.</p>
+                <a href="#" class="leer-mas">Leer más</a>
+            </article>
+        
+            <!-- Post 4 -->
+            <article class="post entrenamiento">
+                <h3>Top 5 ejercicios para fortalecer el core</h3>
+                <p class="meta">Publicado el 3 de abril, 2025 · <span class="tag">Entrenamiento</span></p>
+                <p>Mejorá tu postura y rendimiento incluyendo estos ejercicios básicos pero potentes.</p>
+                <a href="#" class="leer-mas">Leer más</a>
+            </article>
+        
+            <!-- Post 5 -->
+            <article class="post nutricion">
+                <h3>¿Antes o después del gym? Cuándo comer</h3>
+                <p class="meta">Publicado el 2 de abril, 2025 · <span class="tag">Nutrición</span></p>
+                <p>Te contamos qué comer y en qué momento para optimizar tu entrenamiento.</p>
+                <a href="#" class="leer-mas">Leer más</a>
+            </article>
+        </div>
+    </div>
+  
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-container">
+      
+      <!-- Newsletter -->
+      <div class="footer-section">
+        <h3 class="footer-title">Suscribite al Newsletter</h3>
+        <form class="newsletter-form">
+          <label for="email" class="visually-hidden">Correo electrónico</label>
+          <input type="email" id="email" name="email" placeholder="Tu correo electrónico" required aria-required="true">
+          <button type="submit" aria-label="Suscribirme al newsletter">Suscribirme</button>
+        </form>
+      </div>
+  
+      <!-- Redes Sociales -->
+      <div class="footer-section">
+        <h3 class="footer-title">Seguinos en redes</h3>
+        <ul class="social-list">
+          <li class="social-item">
+            <a href="https://facebook.com" target="_blank" class="social-link" aria-label="Facebook">
+              <img src="./svgs/facebook.png" alt="Facebook">
+            </a>
+          </li>
+          <li class="social-item">
+            <a href="https://twitter.com" target="_blank" class="social-link" aria-label="Twitter">
+              <img src="./svgs/twitter.png" alt="Twitter">
+            </a>
+          </li>
+          <li class="social-item">
+            <a href="https://instagram.com" target="_blank" class="social-link" aria-label="Instagram">
+              <img src="./svgs/instagram.png" alt="Instagram">
+            </a>
+          </li>
+        </ul>
+      </div>
+  
+      <!-- Mapa -->
+      <div class="footer-section">
+        <h3 class="footer-title">Encontranos</h3>
+        <div class="map">
+          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3282.888419416138!2d-58.44457668476969!3d-34.60373498045815!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bccb6d6f6e3ab3%3A0x6c30f5f50a5b5c14!2sPlaza%20Italia%2C%20CABA!5e0!3m2!1ses!2sar!4v1614987042096!5m2!1ses!2sar" 
+                height="200" 
+                style="border:0; width: 100%;" 
+                allowfullscreen="" 
+                loading="lazy" 
+                referrerpolicy="no-referrer-when-downgrade">
+            </iframe>
+        </div>
+      </div>
+    </div>
+    <p class="footer-copy">© 2025 Towards Glory. Todos los derechos reservados.</p>
+  </footer>
+
+  <script src="./js/theme-toggle.js" defer></script>
+
+  <script src="./js/blog.js" defer></script>
+  
+</body>
+</html>

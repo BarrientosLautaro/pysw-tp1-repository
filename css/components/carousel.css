@@ -1,0 +1,54 @@
+/* Estilos para el contenedor del carousel */
+.carousel.auto-carousel {
+  overflow: hidden;
+  max-width: 600px;
+  margin: 0 auto;
+  position: relative; /* Para posicionar los controles (opcional) */
+}
+
+/* Estilos para el contenedor de las tarjetas */
+.carousel .cards {
+  display: flex;
+  width: 300%; /* Ancho para contener las 3 tarjetas */
+  animation: slideCarousel 75s infinite ease-in-out; /* Ajusta la duración total */
+}
+
+/* Estilos para cada tarjeta de testimonio */
+.carousel .card {
+  flex: 0 0 100%; /* Cada tarjeta ocupa el 100% del ancho del carousel */
+  padding: 2rem;
+  box-sizing: border-box;
+  text-align: center;
+}
+
+.carousel .card p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  margin-bottom: 1rem;
+}
+
+.carousel .card h4 {
+  font-size: 1rem;
+  font-weight: bold;
+  color: #777;
+}
+
+/* Animación del carousel */
+@keyframes slideCarousel {
+  0%, 18% {
+      transform: translateX(0%); /* Mostrar la primera tarjeta */
+  }
+  25%, 43% {
+      transform: translateX(-100%); /* Mostrar la segunda tarjeta */
+  }
+  50%, 68% {
+      transform: translateX(-200%); /* Mostrar la tercera tarjeta */
+  }
+  75%, 93% {
+      transform: translateX(0%); /* Volver a la primera tarjeta */
+  }
+  98%, 100% {
+      transform: translateX(0%); /* Asegurar la posición final */
+  }
+}
+

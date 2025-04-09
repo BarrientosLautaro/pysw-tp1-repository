@@ -1,0 +1,120 @@
+/* =============================
+   VARIABLES Y TEMAS DEL SITIO
+   ============================= */
+
+/* ===== MODO CLARO (por defecto) ===== */
+:root {
+  /* Colores */
+  --color-bg: #ffffff;
+  --color-text: #000000;
+  --color-primary: #FFD700;
+  --color-secondary: #333333;
+  --color-accent: #FFD700;
+  --color-surface: #f2f2f2;
+
+  /* Variables temáticas */
+  --color-gris: #f5f5f5;
+  --color-gris-oscuro: #333333;
+  --color-borde: #333333;
+
+  /* Tipografía */
+  --fuente-principal: 'Arial', sans-serif;
+  --peso-normal: 400;
+  --peso-negrita: 700;
+  --tam-base: 16px;
+  --line-height: 1.6;
+
+  /* Espaciado */
+  --espacio-xs: 0.5rem;
+  --espacio-sm: 1rem;
+  --espacio-md: 2rem;
+  --espacio-lg: 4rem;
+
+  /* Bordes y radios */
+  --borde-radio: 1rem;
+
+  /* Sombras */
+  --sombra-suave: 0 2px 8px rgba(0, 0, 0, 0.1);
+  --sombra-profunda: 0 4px 20px rgba(0, 0, 0, 0.2);
+
+  /* Transiciones y accesibilidad */
+  --transicion-base: all 0.3s ease;
+  --color-focus: #00bcd4;
+
+  /* Horarios */
+  --color-dia: var(--color-acento); /* Usamos el amarillo como base */
+}
+
+/* ===== MODO OSCURO (cuando se agrega .dark-mode a :root) ===== */
+.dark-mode {
+  --color-bg: #121212;
+  --color-text: #ffffff;
+  --color-primary: #FFD700;
+  --color-secondary: #bbbbbb;
+  --color-accent: #FFD700;
+  --color-surface: #1e1e1e;
+
+  --color-gris: #1e1e1e;
+  --color-gris-oscuro: #444444;
+  --color-borde: #666666;
+  --color-focus: #ffeb3b;
+}
+
+* {
+  transition: background-color 0.4s ease, color 0.4s ease, border-color 0.4s ease;
+}
+/* =============================
+   ESTILOS GENERALES
+   ============================= */
+[data-tema="oscuro"] {
+  --color-dia: var(--color-acento); /* Podés dejarlo igual o variarlo si querés otro tono */
+}
+
+body {
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  font-family: var(--fuente-principal);
+  font-size: var(--tam-base);
+  line-height: var(--line-height);
+}
+
+/* Enfoque accesible */
+:focus-visible {
+  outline: 2px dashed var(--color-focus);
+  outline-offset: 4px;
+}
+
+/* Microinteracciones comunes */
+a,
+button {
+  transition: var(--transicion-base);
+}
+
+a:hover,
+button:hover {
+  opacity: 0.85;
+}
+
+button:active {
+  transform: scale(0.98);
+}
+
+/* Keyframes base */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+

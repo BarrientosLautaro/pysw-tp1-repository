@@ -1,0 +1,101 @@
+/* =======================
+   BOTONES GLOBALES
+   ======================= */
+
+   .button {
+    display: inline-block;
+    padding: 0.75rem 1.5rem;
+    font-size: 1rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    border: none;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    text-align: center;
+    background-color: var(--color-accent);
+    color: var(--color-dark);
+  }
+  
+  .button:hover {
+    background-color: var(--color-accent-dark);
+    transform: translateY(-2px);
+  }
+  
+  .button:active {
+    transform: scale(0.96);
+  }
+  
+  .button:focus-visible {
+    outline: 3px dashed var(--color-accent);
+    outline-offset: 4px;
+  }
+  
+  /* =======================
+     Botones variantes
+     ======================= */
+  
+  .button--outline {
+    background-color: transparent;
+    border: 2px solid var(--color-accent);
+    color: var(--color-accent);
+  }
+  
+  .button--outline:hover {
+    background-color: var(--color-accent);
+    color: var(--color-dark);
+  }
+  
+  .button--dark {
+    background-color: var(--color-dark);
+    color: var(--color-light);
+  }
+  
+  .button--dark:hover {
+    background-color: #111;
+  }
+  
+  .button--light {
+    background-color: var(--color-light);
+    color: var(--color-dark);
+  }
+  
+  .button--light:hover {
+    background-color: #f5f5f5;
+  }
+  
+  /* =======================
+     Tamaños
+     ======================= */
+  
+  .button--small {
+    padding: 0.5rem 1rem;
+    font-size: 0.875rem;
+  }
+  
+  .button--large {
+    padding: 1rem 2rem;
+    font-size: 1.125rem;
+  }
+  
+  /* =======================
+     Animaciones extra (opcional)
+     ======================= */
+  
+  @keyframes pulse {
+    0% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.05);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
+  
+  .button--pulse:hover {
+    animation: pulse 0.6s ease-in-out;
+  }
+  

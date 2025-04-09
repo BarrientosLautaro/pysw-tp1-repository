@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" >
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" >
+    <title>Towards Glory | Clases</title>
+    <link rel="icon" href="./images/logo.jpg" type="image/jpg" >
+
+    <!-- Base -->
+    <link rel="stylesheet" href="./css/base/reset.css" >
+    <link rel="stylesheet" href="./css/base/typography.css" >
+    <link rel="stylesheet" href="./css/base/theme.css" >
+    <link rel="stylesheet" href="./css/layout/header.css" >
+    <link rel="stylesheet" href="./css/layout/footer.css" >
+    <link rel="stylesheet" href="./css/base/responsive.css" >
+
+    <!-- Componentes reutilizables -->
+    <link rel="stylesheet" href="./css/components/buttons.css" >
+
+    <!-- Estilos específicos de esta página -->
+    <link rel="stylesheet" href="./css/pages/clases.css" >
+  </head>
+
+  <body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container header-container">
+
+          <button id="modo-toggle" aria-label="Cambiar modo oscuro" class="modo-toggle">
+            🌙
+          </button>          
+
+            <a href="index.html" class="logo" aria-label="Inicio">
+              <span class="logo-text">TOWARDS GLORY</span>
+            </a>
+            <!-- Toggle Menu (Hamburguesa) -->
+            <input type="checkbox" id="nav-toggle" class="nav-toggle" >
+            <label for="nav-toggle" class="nav-toggle-label">
+              <span class="hamburger-line"></span>
+            </label>
+
+            <nav class="main-nav" aria-label="Menú principal">
+              <ul class="nav-list">
+                <li class="nav-item"><a href="index.html" class="nav-link">Inicio</a></li>
+                <li class="nav-item has-submenu">
+                  <a href="#" class="nav-link">Clases</a>
+                  <ul class="submenu">
+                    <li><a href="./clases.html#musculacion" class="submenu-link">Musculación</a></li>
+                    <li><a href="./clases.html#crossfit" class="submenu-link">CrossFit</a></li>
+                    <li><a href="./clases.html#yoga" class="submenu-link">Yoga</a></li>
+                    <li><a href="./clases.html#spinning" class="submenu-link">Spinning</a></li>
+                  </ul>
+                </li>
+                <li class="nav-item"><a href="./entrenadores.html" class="nav-link">Entrenadores</a></li>
+                <li class="nav-item"><a href="./precios.html" class="nav-link">Precios</a></li>
+                <li class="nav-item"><a href="./blog.html" class="nav-link">Blog</a></li>
+                <li class="nav-item"><a href="./contacto.html" class="nav-link">Contacto</a></li>
+              </ul>
+            </nav>
+          </div>
+      </header>
+
+    <!-- Contenido principal -->
+    <main class="clases-main">
+      <section class="clases-hero">
+        <h1 class="section-title">Nuestras Clases</h1>
+        <p class="clases-subtitle">Descubrí la variedad de disciplinas que ofrecemos para todos los niveles</p>
+      </section>
+
+      <!-- Filtros CSS -->
+      <section class="clases-filtro-contenedor">
+
+        <!-- Inputs radio -->
+        <input type="radio" name="filtro" id="filtro-todos" hidden checked>
+        <input type="radio" name="filtro" id="filtro-musculacion" hidden>
+        <input type="radio" name="filtro" id="filtro-crossfit" hidden>
+        <input type="radio" name="filtro" id="filtro-yoga" hidden>
+        <input type="radio" name="filtro" id="filtro-spinning" hidden>
+      
+        <!-- Botones de filtro -->
+        <div class="filtros">
+          <label for="filtro-todos" class="filtro-btn">Todos</label>
+          <label for="filtro-musculacion" class="filtro-btn">Musculación</label>
+          <label for="filtro-crossfit" class="filtro-btn">CrossFit</label>
+          <label for="filtro-yoga" class="filtro-btn">Yoga</label>
+          <label for="filtro-spinning" class="filtro-btn">Spinning</label>
+        </div>
+      
+        <!-- Tarjetas de clases -->
+        <div class="clases-grid">
+          <div class="clase-card clase-musculacion">
+            <img src="./images/musculacion.jpg" alt="Musculación">
+            <div class="clase-info">
+              <h2>Musculación</h2>
+              <p>Entrenamiento de fuerza para mejorar tu masa muscular y rendimiento.</p>
+            </div>
+          </div>
+      
+          <div class="clase-card clase-crossfit">
+            <img src="./images/crossfit.jpg" alt="CrossFit">
+            <div class="clase-info">
+              <h2>CrossFit</h2>
+              <p>Rutinas intensas que combinan levantamiento, cardio y funcional.</p>
+            </div>
+          </div>
+      
+          <div class="clase-card clase-yoga">
+            <img src="./images/yoga.jpg" alt="Yoga">
+            <div class="clase-info">
+              <h2>Yoga</h2>
+              <p>Una práctica para mejorar tu flexibilidad, concentración y equilibrio.</p>
+            </div>
+          </div>
+      
+          <div class="clase-card clase-spinning">
+            <img src="./images/spinnig.jpg" alt="Spinning">
+            <div class="clase-info">
+              <h2>Spinning</h2>
+              <p>Ideal para quemar calorías, fortalecer piernas y mejorar tu estado cardiovascular.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+      
+      <section class="horarios">
+        <h2>Horarios Semanales</h2>
+        <div class="tabla-horarios">
+          <div class="tabla-horarios__header">
+            <div>Día</div>
+            <div>6:00</div>
+            <div>9:00</div>
+            <div>12:00</div>
+            <div>15:00</div>
+            <div>18:00</div>
+            <div>21:00</div>
+          </div>
+      
+          <div class="tabla-horarios__fila">
+            <div>Lunes</div>
+            <div data-header="6:00">Crossfit</div>
+            <div data-header="9:00">Yoga</div>
+            <div data-header="12:00">-</div>
+            <div data-header="15:00">Funcional</div>
+            <div data-header="18:00">Boxeo</div>
+            <div data-header="21:00">Zumba</div>
+          </div>
+          <div class="tabla-horarios__fila">
+            <div>Martes</div>
+            <div data-header="6:00">Funcional</div>
+            <div data-header="9:00">CrossFit</div>
+            <div data-header="12:00">-</div>
+            <div data-header="15:00">Stretching</div>
+            <div data-header="18:00">HIIT</div>
+            <div data-header="21:00">Zumba</div>
+          </div>
+          <div class="tabla-horarios__fila">
+            <div>Miércoles</div>
+            <div data-header="6:00">yoga</div>
+            <div data-header="9:00">CrossFit</div>
+            <div data-header="12:00">Funcional</div>
+            <div data-header="15:00">-</div>
+            <div data-header="18:00">Boxeo</div>
+            <div data-header="21:00">Zumba</div>
+          </div>
+          <!-- Agregá más días si querés -->
+        </div>
+      </section>      
+      
+      <!-- Botón de contacto -->
+      <div class="contacto-btn-container">
+        <a href="contacto.html" class="contacto-btn">Solicitar más información</a>
+      </div>
+      
+    </main>
+
+    <footer class="footer">
+      <div class="footer-container">
+        
+        <!-- Newsletter -->
+        <div class="footer-section">
+          <h3 class="footer-title">Suscribite al Newsletter</h3>
+          <form class="newsletter-form">
+            <label for="email" class="visually-hidden">Correo electrónico</label>
+            <input type="email" id="email" name="email" placeholder="Tu correo electrónico" required aria-required="true">
+            <button type="submit" aria-label="Suscribirme al newsletter">Suscribirme</button>
+          </form>
+        </div>
+    
+        <!-- Redes Sociales -->
+        <div class="footer-section">
+          <h3 class="footer-title">Seguinos en redes</h3>
+          <ul class="social-list">
+            <li class="social-item">
+              <a href="https://facebook.com" target="_blank" class="social-link" aria-label="Facebook">
+                <img src="./svgs/facebook.png" alt="Facebook">
+              </a>
+            </li>
+            <li class="social-item">
+              <a href="https://twitter.com" target="_blank" class="social-link" aria-label="Twitter">
+                <img src="./svgs/twitter.png" alt="Twitter">
+              </a>
+            </li>
+            <li class="social-item">
+              <a href="https://instagram.com" target="_blank" class="social-link" aria-label="Instagram">
+                <img src="./svgs/instagram.png" alt="Instagram">
+              </a>
+            </li>
+          </ul>
+        </div>
+    
+        <!-- Mapa -->
+        <div class="footer-section">
+          <h3 class="footer-title">Encontranos</h3>
+          <div class="map">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3282.888419416138!2d-58.44457668476969!3d-34.60373498045815!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bccb6d6f6e3ab3%3A0x6c30f5f50a5b5c14!2sPlaza%20Italia%2C%20CABA!5e0!3m2!1ses!2sar!4v1614987042096!5m2!1ses!2sar" 
+                  height="200" 
+                  style="border:0; width: 100%;" 
+                  allowfullscreen="" 
+                  loading="lazy" 
+                  referrerpolicy="no-referrer-when-downgrade">
+              </iframe>
+          </div>
+        </div>
+      </div>
+      <p class="footer-copy">© 2025 Towards Glory. Todos los derechos reservados.</p>
+    </footer>
+
+     <script src="./js/theme-toggle.js" defer></script>
+     
+  </body>
+</html>

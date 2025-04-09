@@ -1,0 +1,282 @@
+/* ====================================
+   Header general
+==================================== */
+.header {
+  background-color: var(--color-fondo);
+  color: var(--color-texto);
+  position: sticky;
+  top: 0;
+  z-index: 999;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Contenedor interno */
+.header-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  padding: 1rem 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* ====================================
+   Logo 
+==================================== */
+/*.logo {
+  font-size: 2rem;
+  font-weight: 900;
+  font-family: 'Oswald', sans-serif;
+  color: var(--color-acento);
+  letter-spacing: 1px;
+  text-decoration: none;
+  white-space: nowrap;
+  margin-right: auto;
+}*/
+
+/* ====================================
+   Menú de navegación
+==================================== */
+.main-nav {
+  display: flex;
+  align-items: center;
+}
+
+/* Lista principal */
+.nav-list {
+  list-style: none;
+  display: flex;
+  gap: 1.5rem;
+  margin: 0;
+  padding: 0;
+}
+
+/* Enlace principal */
+.nav-link {
+  color: var(--color-texto);
+  font-weight: 600;
+  text-transform: uppercase;
+  text-decoration: none;
+  position: relative;
+  transition: color 0.3s ease;
+  padding: 0.5rem 0; /* Añadido padding vertical para mejor espaciado táctil */
+}
+
+.nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: -3px;
+  left: 0;
+  width: 0%;
+  height: 2px;
+  background-color: var(--color-acento);
+  transition: width 0.3s ease;
+}
+
+.nav-link:hover,
+.nav-link:focus {
+  color: var(--color-acento);
+}
+
+.nav-link:hover::after,
+.nav-link:focus::after {
+  width: 100%;
+}
+
+/* Submenú */
+.has-submenu {
+  position: relative;
+}
+
+.submenu {
+  display: none;
+  position: absolute;
+  top: calc(100% + 0.2rem); /* Ajuste para evitar toque accidental */
+  left: 0;
+  background-color: var(--color-fondo);
+  border: 1px solid var(--color-acento);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
+  list-style: none;
+  padding: 0.5rem 0;
+  z-index: 1000;
+  min-width: 150px; /* Asegura un ancho mínimo para el submenú */
+  min-width: 100%; /* Asegurar que al menos tenga el ancho del enlace padre */
+  box-sizing: border-box; /* Incluir el borde en el ancho */
+}
+
+.submenu-link {
+  display: block;
+  padding: 0.75rem 1.5rem;
+  white-space: nowrap;
+  color: var(--color-texto);
+  text-decoration: none;
+  transition: background 0.3s ease;
+}
+
+.submenu-link:hover,
+.submenu-link:focus {
+  display: block;
+  background-color: var(--color-acento);
+  color: var(--color-fondo);
+}
+
+.has-submenu:hover .submenu,
+.has-submenu:focus-within .submenu {
+  display: block;
+}
+
+/* ====================================
+   Toggle (Hamburguesa)
+==================================== */
+.nav-toggle {
+  display: none; /* Ocultar el checkbox visualmente */
+  appearance: auto;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  width: 0;
+  height: 0;
+  opacity: 0;
+  position: absolute;
+}
+
+.nav-toggle-label {
+  display: none; /* Ocultar por defecto en escritorio */
+  flex-direction: column;
+  justify-content: center;
+  cursor: pointer;
+  gap: 6px;
+  padding: 10px;
+  width: 15px;
+  height: 15px;
+  border-radius: 5px;
+  background-color: yellow; /* Puedes cambiar el color de fondo del botón */
+  border: 2px solid var(--color-texto); /* Puedes añadir un borde personalizado */
+  margin-left: auto; /* Posición a la derecha en móvil */
+}
+
+.nav-toggle-label:hover {
+  /* Estilos al pasar el ratón (opcional) */
+  opacity: 0.8;
+}
+
+.nav-toggle:focus + .nav-toggle-label {
+  /* Estilos para el foco (accesibilidad) */
+  outline: 2px solid var(--color-focus); /* Usa tu variable de foco */
+  outline-offset: 2px;
+}
+
+.nav-toggle-label span,
+.nav-toggle-label span::before,
+.nav-toggle-label span::after {
+  transition: all 0.4s ease-in-out; /* Transición más suave */
+  background-color: var(--color-acento-oscuro, var(--color-acento)); /* Usar un tono más oscuro al pasar el ratón */
+}
+
+.nav-toggle-label span{
+  background-color: var(--color-acento);
+  height: 3px;
+  width: 100%;
+  border-radius: 2px;
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  transition: color 0.3s ease-in-out 0s;
+  transition: opacity 1s ease-in 0.5s;
+}
+
+.nav-toggle-label span::before,
+.nav-toggle-label span::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background-color: var(--color-acento);
+  border-radius: 2px;
+  transition: all 0.3s ease;
+}
+
+.nav-toggle-label span::before {
+  top: -8px;
+}
+
+.nav-toggle-label span::after {
+  top: 8px;
+}
+
+/* Animación de la hamburguesa al activarse */
+.nav-toggle:checked + .nav-toggle-label span {
+  background-color: transparent; /* Oculta la línea central */
+}
+
+.nav-toggle:checked + .nav-toggle-label span::before {
+  transform: translateY(10px) rotate(45deg); /* Ajustar posición */
+}
+
+.nav-toggle:checked + .nav-toggle-label span::after {
+  transform: translateY(-10px) rotate(-45deg);
+}
+
+/* ====================================
+    Modo Oscuro Toggle
+==================================== */
+.modo-toggle {
+  background: none;
+  border: none;
+  color: var(--color-acento);
+  font-size: 1.5rem;
+  cursor: pointer;
+  padding: 0.5rem;
+  margin-left: 1rem; /* Espacio del logo en escritorio */
+  transition: transform 0.3s ease;
+}
+
+.modo-toggle:hover,
+.modo-toggle:focus {
+  transform: scale(1.1);
+}
+
+/* ====================================
+   Responsive
+==================================== */
+@media (max-width: 768px) {
+  .nav-toggle {
+    display: block;
+  }
+
+  .nav-toggle-label {
+    display: flex;
+    margin-left: auto;
+  }
+
+  .main-nav {
+    width: 100%;
+    display: none;
+    flex-direction: column;
+    margin-top: 1rem;
+  }
+
+  .nav-list {
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  .nav-toggle:checked + .nav-toggle-label + .main-nav {
+    display: flex;
+  }
+
+  .submenu {
+    position: static;
+    box-shadow: none;
+    border: none;
+  }
+
+  .has-submenu:hover .submenu,
+  .has-submenu:focus-within .submenu {
+    display: block;
+  }
+}
+
+
