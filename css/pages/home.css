@@ -33,7 +33,7 @@
 
 .hero-content {
   text-align: center;
-  color: var(--color-texto);
+  color: gold;
   padding: 2rem;
 }
 
@@ -85,14 +85,3 @@
   color: var(--color-texto);
 }
 
-.scroll-container {
-  scroll-snap-type: y mandatory;
-  overflow-y: scroll;
-  height: 100vh;
-  scroll-behavior: smooth;
-}
-
-.snap-section {
-  scroll-snap-align: start;
-  min-height: 100vh;
-}
