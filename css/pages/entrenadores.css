@@ -64,7 +64,7 @@
 
 .tarjeta-front img {
   width: 100%;
-  height: 100%;
+  height: 60%;
   object-fit: cover;
   object-position: center top;
   border-radius: 10px;
@@ -75,12 +75,25 @@
   font-size: 1.6rem;
   color: var(--color-primario);
   margin-bottom: 0.5rem;
+  height: 2.5rem; /* Para evitar que el texto empuje todo */
+  overflow: hidden;
 }
 
 .tarjeta-front p {
   color: #666;
   font-size: 1rem;
   text-align: center;
+  height: 3.5rem; /* También limitar altura */
+  overflow: hidden;
+  text-overflow: ellipsis;
+
+  display: -webkit-box;
+  -webkit-line-clamp: 2; /* máximo 2 líneas */
+  -webkit-box-orient: vertical;
+
+  display: box;
+  box-orient: vertical;
+  line-clamp: 2;
 }
 
 .tarjeta-back {
